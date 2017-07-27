@@ -19,7 +19,7 @@ Note: The free tier for text analytics only allows 5,000 transactions per month,
 
 ### Topic Analysis
 
-**This feature will be deprecated soon** The Text Analytics API is dropping support for Topic Detection on August 24. The code will remain as-is for now, but will get cleaned up in the near future.
+_**This feature will be deprecated soon** The Text Analytics API is dropping support for Topic Detection on August 24. The code will remain as-is for now, but will get cleaned up in the near future._
 
 What topics are most common in your recent commit messages? Are the commits all related to the same subject or are we scattered across multiple areas?
 Are there topics in the commit messages that you don't expect?
