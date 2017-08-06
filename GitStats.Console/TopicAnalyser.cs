@@ -36,7 +36,8 @@ namespace GitStats.Console
                 request.Documents.Add(document);
             }
 
-            var client = new TopicClient(Constants.ApiKey);
+            var apiKey = System.Configuration.ConfigurationManager.AppSettings["ApiKey"];
+            var client = new TopicClient(apiKey);
 
             var operationUrl = client.StartTopicProcessing(request);
 

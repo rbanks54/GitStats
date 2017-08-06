@@ -38,7 +38,8 @@ namespace GitStats.Console
                 request.Documents.Add(document);
             }
 
-            var client = new SentimentClient(Constants.ApiKey);
+            var apiKey = System.Configuration.ConfigurationManager.AppSettings["ApiKey"];
+            var client = new SentimentClient(apiKey);
 
             var response = client.GetSentiment(request);
             var scores = new List<float>();
