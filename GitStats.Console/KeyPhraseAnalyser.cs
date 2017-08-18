@@ -41,15 +41,13 @@ namespace GitStats.Console
 
             var response = client.GetKeyPhrases(request);
 
-            var phrases = from d in response.Documents
-                          from kp in d.KeyPhrases
-                          select kp;
+            var phrases = response.Documents.SelectMany(d => d.KeyPhrases).ToList();
 
-            var phraseStats = phrases.GroupBy(p => p).Select(p => new { phrase = p, count = p.Count() });
+            var phraseStats = phrases.Distinct().Select(p => new { phrase = p, count = phrases.Count(x => x.Equals(p))});
 
-            foreach (var phrase in phraseStats.OrderBy(ps => ps.count).Take(10))
+            foreach (var result in phraseStats.OrderBy(ps => ps.count).Take(10))
             {
-                System.Console.WriteLine($"Key Phrases: {phrase}");
+                System.Console.WriteLine($"Key Phrase: {result.phrase} | Occurrences: {result.count}");
             }
         }
 
