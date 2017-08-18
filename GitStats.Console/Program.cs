@@ -12,7 +12,7 @@ namespace GitStats.Console
         {
             System.Console.Write("Git path: ");
             var gitPath = System.Console.ReadLine();
-            System.Console.Write("Analysis ([S]entiment, [T]opics, [B]ugSpots, [C]oupling, [I]mpact, [A]uthors): ");
+            System.Console.Write("Analysis ([S]entiment, [K]ey phrases, [B]ugSpots, [C]oupling, [I]mpact, [A]uthors): ");
             var analysis = System.Console.ReadLine();
             switch (analysis.ToLowerInvariant())
             {
@@ -22,8 +22,8 @@ namespace GitStats.Console
                 case "s":
                     new SentimentAnalyser().Analyse(gitPath);
                     break;
-                case "t":
-                    new TopicAnalyser().Analyse(gitPath);
+                case "k":
+                    new KeyPhraseAnalyser().Analyse(gitPath);
                     break;
                 case "c":
                     new CouplingAnalyser().Analyse(gitPath);
