@@ -13,21 +13,19 @@ Do the commit messages by the team indicate a general level of happiness with th
 Recent messages from the git commit log are sent to [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/) for analysis, 
 and the results are shown on screen.
 
-For now, you will need to enter your Cognitive Services API key in the constants.cs file.
+For now, you will need to enter your Cognitive Services API key in the app.config file.
 
 Note: The free tier for text analytics only allows 5,000 transactions per month, across both sentiment and topic analysis. You might want to restrict your usage on this one if you don't have a paid tier.
 
-### Topic Analysis
+### Key Phrase Analysis
 
-_**This feature will be deprecated soon** The Text Analytics API is dropping support for Topic Detection on August 24. The code will remain as-is for now, but will get cleaned up in the near future._
-
-What topics are most common in your recent commit messages? Are the commits all related to the same subject or are we scattered across multiple areas?
-Are there topics in the commit messages that you don't expect?
+What phrases are the most common across your recent commit messages? Are they related to the same subject or scattered across many areas?
+Are there phrases in the commit messages that you don't expect?
 
 Much like sentiment analysis, recent messages from your git commit log are sent to [Azure Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/) for analysis.
-Unlike the sentiment analysis, topic analysis is fairly slow. 100 messages generally takes a minute or two to finish processing.
+The code limits the analysis to the last 100 messages but it's simple to change.
 
-For now, you will need to enter your Cognitive Services API key in the constants.cs file.
+For now, you will need to enter your Cognitive Services API key in the app.config file.
 
 Note: The free tier for text analytics only allows 5,000 transactions per month, across both sentiment and topic analysis. You might want to restrict your usage on this one if you don't have a paid tier.
 
